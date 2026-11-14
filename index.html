@@ -1,180 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior C++ Systems Engineer | High-Load & Mission-Critical Systems</title>
-    <style>
-        :root {
-            --bg-color: #0d1117;
-            --text-color: #c9d1d9;
-            --heading-color: #f0f6fc;
-            --accent-color: #58a6ff;
-            --border-color: #30363d;
-            --code-bg: #161b22;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1, h2, h3 {
-            color: var(--heading-color);
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-        }
-        h1 { font-size: 2.2em; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 0; }
-        h2 { font-size: 1.5em; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
-        h3 { font-size: 1.2em; color: var(--accent-color); margin-top: 1.2em; }
-        a { color: var(--accent-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .contact-info {
-            background-color: var(--code-bg);
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-        .contact-info a { margin-right: 20px; display: inline-block; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        .highlight { color: #7ee787; font-weight: bold; }
-        .section { margin-bottom: 40px; }
-        .tag {
-            display: inline-block;
-            background-color: var(--code-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 4px 10px;
-            font-size: 0.85em;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            color: var(--heading-color);
-        }
-        @media (max-width: 600px) {
-            .container { padding: 20px 15px; }
-            h1 { font-size: 1.8em; }
-            .contact-info a { display: block; margin-bottom: 10px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nickolay, C++ Engineer</title>
+<meta name="description" content="C++/Linux engineer who finds and fixes memory bloat, leaks, deadlocks and throughput bottlenecks in production systems. Part-time contracts, async, crypto payments welcome.">
+<style>
+  :root {
+    --bg: #fbfbf9; --surface: #ffffff; --text: #1f2328; --muted: #5d6670;
+    --border: #e3e3de; --accent: #0b6e4f; --accent-soft: #e5f2ec; --num: #0b6e4f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1214; --surface: #161a1d; --text: #e6e8ea; --muted: #9aa3ab;
+      --border: #2a3035; --accent: #4fd1a1; --accent-soft: #15302a; --num: #4fd1a1;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 48px 16px 64px; }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em;
+         background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+
+  header h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 4px; letter-spacing: -.01em; }
+  .role { font-size: 1.3rem; font-weight: 600; color: var(--accent); margin: 0 0 12px; }
+
+  .principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .principle { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+  .principle h3 { margin: 0 0 6px; font-size: 1rem; }
+  .principle p { margin: 0; font-size: .95rem; }
+  .lead { font-size: 1.15rem; color: var(--muted); margin: 0 0 20px; max-width: 680px; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 10px; }
+  .contacts a { text-decoration: none; border: 1px solid var(--border); background: var(--surface);
+                padding: 7px 14px; border-radius: 999px; font-size: .95rem; }
+  .contacts a.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 36px 0 8px; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .stat b { display: block; font-size: 1.45rem; color: var(--num); line-height: 1.2; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .85rem; color: var(--muted); }
+
+  h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted);
+       margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+  .cases { display: grid; gap: 14px; }
+  .case { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .case h3 { margin: 0 0 10px; font-size: 1.05rem; }
+  .case h3 .res { color: var(--num); white-space: nowrap; }
+  .case dl { margin: 0; display: grid; grid-template-columns: 92px 1fr; gap: 4px 12px; font-size: .95rem; }
+  .case dt { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; padding-top: 3px; }
+  .case dd { margin: 0; }
+
+  .job { margin-bottom: 26px; }
+  .job-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+  .job h3 { margin: 0; font-size: 1.05rem; }
+  .job .meta { color: var(--muted); font-size: .9rem; }
+  .job p { margin: 4px 0 6px; color: var(--muted); }
+  .job ul { margin: 6px 0 0; padding-left: 20px; }
+  .job li { margin-bottom: 4px; }
+
+  .skills { display: grid; grid-template-columns: 170px 1fr; gap: 8px 16px; font-size: .95rem; }
+  .skills dt { color: var(--muted); }
+  .skills dd { margin: 0; }
+
+  .offer { background: var(--accent-soft); border-radius: 10px; padding: 20px 22px; }
+  .offer ul { margin: 8px 0 12px; padding-left: 20px; }
+  .offer p { margin: 8px 0; }
+
+  @media (max-width: 640px) {
+    .wrap { padding-top: 28px; }
+    header h1 { font-size: 1.7rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .case dl { grid-template-columns: 1fr; gap: 0; }
+    .case dt { padding-top: 8px; }
+    .skills { grid-template-columns: 1fr; gap: 0; }
+    .principles { grid-template-columns: 1fr; }
+    .skills dd { margin-bottom: 10px; }
+  }
+  @media print {
+    :root { --bg: #fff; --surface: #fff; }
+    body { font-size: 12px; }
+    .wrap { padding: 0; max-width: none; }
+    .contacts a { border: none; padding: 0 10px 0 0; }
+    .contacts a.primary { background: none; color: var(--text); }
+    .case, .stat { break-inside: avoid; }
+    h2 { margin-top: 24px; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Senior C++ Systems Engineer</h1>
-            <p style="font-size: 1.2em; color: var(--accent-color);">High-Load & Mission-Critical Systems Specialist</p>
-            <div class="contact-info">
-                <a href="mailto:3050860@gmail.com">✉️ 3050860@gmail.com</a>
-                <a href="https://t.me/mgkp_mgnkp" target="_blank">💬 @mgkp_mgnkp</a>
-                <a href="https://github.com/3050860" target="_blank">💻 github.com/3050860</a>
-            </div>
-        </header>
+<div class="wrap">
 
-        <section class="section">
-            <h2>Professional Summary</h2>
-            <p>Systems engineer with 26+ years of experience specializing in high-load, mission-critical applications operating in strict 24/7 production environments. Core expertise: identifying and eliminating performance bottlenecks, memory leaks, race conditions, and scaling issues in complex C++/Linux backends. Proven track record of stabilizing production systems, optimizing resource consumption by orders of magnitude, and building robust device fleet management architectures handling thousands of concurrent connections.</p>
-        </section>
+<header>
+  <h1>Nickolay</h1>
+  <p class="role">C++ / Linux Performance &amp; Reliability Engineer</p>
+  <p class="lead">I find out why a production system is slow, bloated, leaking or stuck, and fix the root cause.
+  15+ years building and rescuing high-load systems, from a social network running on a single server
+  to DDoS-protection infrastructure for banks.</p>
+  <div class="contacts">
+    <a class="primary" href="https://t.me/mgkp_mgnkp">Telegram @mgkp_mgnkp</a>
+    <a href="mailto:3050860@gmail.com">3050860@gmail.com</a>
+    <a href="https://github.com/3050860">github.com/3050860</a>
+  </div>
+</header>
 
-        <section class="section">
-            <h2>Core Competencies</h2>
-            <div>
-                <span class="tag">High-Load C++ Development</span>
-                <span class="tag">Multithreading & Async I/O</span>
-                <span class="tag">Memory Leak Detection (Valgrind, ASan)</span>
-                <span class="tag">AOSP / Android TV Fleet Management</span>
-                <span class="tag">Reproducible Builds & CI/CD</span>
-                <span class="tag">Secure Offline GPG Signing</span>
-                <span class="tag">PKI & Hardware Token Licensing</span>
-                <span class="tag">Linux Kernel & Network Tuning</span>
-            </div>
-        </section>
+<div class="stats">
+  <div class="stat"><b>5.2 GB → 105 MB</b><span>server RSS, same workload</span></div>
+  <div class="stat"><b>3 → 75 MB/s</b><span>embedded web server throughput</span></div>
+  <div class="stat"><b>3,400 devices</b><span>connecting at once, no crash after fix</span></div>
+  <div class="stat"><b>80,000 users</b><span>social network served by one machine</span></div>
+</div>
 
-        <section class="section">
+<h2>Problems I have solved</h2>
+<div class="cases">
 
-            <h2>Selected Career Highlights</h2>
+  <article class="case">
+    <h3>Server memory footprint <span class="res">−98%</span></h3>
+    <dl>
+      <dt>Symptom</dt><dd>A C++ server held 5.2 GB of resident memory; nobody knew why.</dd>
+      <dt>Root cause</dt><dd>Transparent Huge Pages were enabled and glibc created far more malloc arenas than the workload needed, so freed memory was never returned to the OS.</dd>
+      <dt>Fix</dt><dd>Tuned the allocator and THP policy for the process.</dd>
+      <dt>Result</dt><dd>RSS dropped from 5,200 MB to 105 MB.</dd>
+    </dl>
+  </article>
 
-            <h3>Senior C++ Systems Engineer | Hotel TV & Fleet management (Current)</h3>
-            <p>Stabilized and optimized the core C++ backend and Android TV applications for a large-scale Hotel TV system.</p>
-            <ul>
-     <li><span class="highlight">Memory Optimization:</span> Reduced server RSS from 5,200 MB to 105 MB
-       (98% reduction) by identifying and resolving glibc malloc arena
-       fragmentation caused by Transparent Huge Pages (THP).</li>
-     <li><span class="highlight">Protocol Rewrite:</span> Rewrote a legacy communication protocol where a
-       single slow device could block the entire read queue, ensuring
-       backward compatibility with older clients..</li>
-     <li><span class="highlight">Embedded Web Server:</span> Optimized the built-in web server, reducing
-       memory consumption by 60x while increasing throughput from 3 MB/s
-       to 75 MB/s (25x improvement)..</li>
-     <li><span class="highlight">System Stability:</span> Eliminated memory leaks, resolved thread
-       deadlocks, and enforced strict timeout mechanisms across all
-       modules (SIGINT-based graceful shutdown instead of indefinite
-       network waits)..</li>
-     <li><span class="highlight">Android TV App:</span> Implemented a custom CSS parser for visual styling,
-       migrated from Android Support Library to AndroidX, added dynamic
-       language loading without package rebuilds, and resolved numerous
-       ANR and crash issues..</li>
-            </ul>
+  <article class="case">
+    <h3>Server crashed when thousands of TVs connected at once</h3>
+    <dl>
+      <dt>Symptom</dt><dd>A production server segfaulted with a corrupted stack during connection storms. A standalone stress test of the same code never crashed, even under AddressSanitizer.</dd>
+      <dt>Root cause</dt><dd>Ran the real server with an ASan build of the library: <code>select()</code> was used to wait for a non-blocking connect. With thousands of open sockets the new descriptor number exceeded <code>FD_SETSIZE</code> (1024), and <code>FD_SET</code> wrote past the <code>fd_set</code> on the stack. The test program had too few descriptors to hit it. While there, found a race between two concurrent <code>connect()</code> calls to the same address.</dd>
+      <dt>Fix</dt><dd>Switched to <code>poll()</code>; made the address check and registration atomic. Added regression tests that open 1,100 extra descriptors and run a 16-thread connect storm.</dd>
+      <dt>Result</dt><dd>3,400 emulated TVs connecting and reconnecting three times, 2,905 device checks: no crash, no ASan reports. Before the fix it crashed within the first four connections. Concurrent connects went from 10–14 s to 10–100 ms.</dd>
+    </dl>
+  </article>
 
-            <h3>AOSP Device Fleet Management System | Personal Open-Source Initiative</h3>
-            <ul>
-                <li>Designed and implemented a high-performance standalone ADB client library extracted from AOSP sources.</li>
-                <li>Successfully manages <span class="highlight">3,500+ simultaneous TCP connections</span> without memory leaks or thread starvation.</li>
-                <li>Packaged as a lightweight <code>.so</code> library for seamless integration into custom fleet management systems.</li>
-            </ul>
+  <article class="case">
+    <h3>One slow client stalled the whole fleet</h3>
+    <dl>
+      <dt>Symptom</dt><dd>When a single device on a bad link slowed down, every other device stopped being served.</dd>
+      <dt>Root cause</dt><dd>The legacy in-house protocol processed one shared read queue, so one slow peer blocked all the rest (head-of-line blocking).</dd>
+      <dt>Fix</dt><dd>Rewrote the protocol layer so each peer is handled independently, keeping wire compatibility with devices already deployed.</dd>
+      <dt>Result</dt><dd>Slow devices no longer affect others; old clients kept working without an update.</dd>
+    </dl>
+  </article>
 
-            <h3>DDoS Prevention & Security Systems | Kaspersky Lab</h3>
-            <ul>
-                <li>Developed enterprise-grade DDoS protection systems for financial institutions.</li>
-                <li>Optimized database performance, replication, and continuous backup strategies using Percona forks.</li>
-                <li>Implemented network filtering and kernel parameter tuning to mitigate DDoS attack impact.</li>
-            </ul>
+  <article class="case">
+    <h3>Embedded web server <span class="res">25× faster, 60× leaner</span></h3>
+    <dl>
+      <dt>Fix</dt><dd>Reworked buffering and configuration of the built-in HTTP server.</dd>
+      <dt>Result</dt><dd>Throughput from 3 MB/s to 75 MB/s while using 60 times less memory.</dd>
+    </dl>
+  </article>
 
-            <h3>High-Load Web Infrastructure | Free Forum Platform</h3>
-            <ul>
-                <li>Optimized codebase and infrastructure for a platform handling <span class="highlight">3 million daily hits</span> across 21 colocation servers.</li>
-                <li>Reduced error rates through systematic code optimization, load monitoring, and kernel tuning.</li>
-            </ul>
-        </section>
+  <article class="case">
+    <h3>Shutdown that never finished</h3>
+    <dl>
+      <dt>Symptom</dt><dd>On SIGINT, modules hung waiting for network downloads; restarts took unpredictably long. The server also had memory leaks and thread deadlocks.</dd>
+      <dt>Fix</dt><dd>Hunted down the leaks and deadlocks; added explicit timeouts to every module so all of them exit within a fixed deadline.</dd>
+      <dt>Result</dt><dd>Stable long-running server with predictable restarts.</dd>
+    </dl>
+  </article>
 
-        <section class="section">
-            <h2>Notable Technical Achievements</h2>
-            <h3>Open Source Contributions</h3>
-            <ul>
-                <li><strong>Memcached Performance Issue (circa 2006):</strong> Identified significant latency in responses for specific packet sizes. Root cause: missing <code>TCP_NODELAY</code> socket option. Implemented and contributed the fix.</li>
-                <li><strong>Java Push Server Thread Leak (circa 2008):</strong> Discovered a thread leak in an open-source Java push server handling thousands of concurrent users. Root cause: missing <code>volatile</code> keyword on a thread counter. Identified manually through deep code analysis.</li>
-            </ul>
-        </section>
+  <article class="case">
+    <h3>Latency spikes in memcached</h3>
+    <dl>
+      <dt>Symptom</dt><dd>Responses of certain sizes came back with a large, constant delay.</dd>
+      <dt>Root cause</dt><dd>The <code>TCP_NODELAY</code> socket option was not set, so Nagle's algorithm held back small packets.</dd>
+      <dt>Result</dt><dd>Patched and deployed in our production; the delay disappeared.</dd>
+    </dl>
+  </article>
 
-        <section class="section">
-            <h2>Work Philosophy</h2>
-            <ul>
-                <li><strong>Asynchronous & Focused:</strong> Prefer text-based communication (Jira, GitHub, email) to maintain deep focus and avoid meeting fatigue.</li>
-                <li><strong>Efficiency-Driven:</strong> Leverage modern AI orchestration to accelerate routine tasks while maintaining senior-level quality standards backed by rigorous QA.</li>
-                <li><strong>Production-First:</strong> All solutions are designed for zero-downtime, 24/7 mission-critical environments.</li>
-            </ul>
-        </section>
+  <article class="case">
+    <h3>Thread leak in an open-source Java push server</h3>
+    <dl>
+      <dt>Symptom</dt><dd>A push server with thousands of connected browsers slowly leaked threads. The team assumed the bug was in our callbacks.</dd>
+      <dt>Root cause</dt><dd>Found by reading the server's source: a thread counter shared between threads was not declared <code>volatile</code>.</dd>
+      <dt>Result</dt><dd>One-word fix; the leak was gone.</dd>
+    </dl>
+  </article>
 
-        <section class="section">
-            <h2>Availability</h2>
-            <p>Open to <strong>part-time contract work (20–30 hrs/week)</strong> or targeted architectural audits for companies struggling with:</p>
-            <ul>
-                <li>Memory leaks, race conditions, or scaling bottlenecks in C++/Linux backends.</li>
-                <li>Device fleet management at scale (especially custom AOSP/non-GMS devices).</li>
-                <li>Reproducible, secure CI/CD pipelines for Debian/Ubuntu packages.</li>
-            </ul>
-            <p style="margin-top: 20px; font-size: 1.1em;">
-                <strong>Let's talk:</strong> <a href="https://t.me/mgkp_mgnkp">Telegram</a> or <a href="mailto:3050860@gmail.com">Email</a>
-            </p>
-        </section>
-    </div>
+</div>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="job-head"><h3>C++ &amp; Android Engineer, Netarium TV</h3><span class="meta">current</span></div>
+  <p>Hotel TV platform: a C++ server managing fleets of Android TV devices, plus the Android TV client app.</p>
+  <ul>
+    <li>Server stabilization and performance work described in the cases above.</li>
+    <li>Designed and built the server licensing system based on JaCarta hardware tokens.</li>
+    <li>Built the build and signing infrastructure for the company's own Debian package repository: offline master key, separate signing key, packages for several Debian and Ubuntu releases.</li>
+    <li>Built a CSS-based styling system for all UI elements, including a custom CSS parser covered by tests.</li>
+    <li>Migrated the app from the Android Support Library to AndroidX.</li>
+    <li>Added UI translations that load at runtime, so a translation can be changed without rebuilding the app; content is delivered from the server in the requested language.</li>
+    <li>Fixed many ANRs and crashes.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>libadb: standalone ADB client library</h3><span class="meta"><a href="https://github.com/3050860/adb-linux-standalone-cmake-gcc">GitHub</a></span></div>
+  <p>C++17 library for managing Android devices over TCP without the adb server or shell processes, built from AOSP sources. Used in production to manage TV fleets.</p>
+  <ul>
+    <li>Push/pull, shell, APK install (single, split, multi-package), sync and async modes, batch operations across devices.</li>
+    <li>Multiplexing: operations from different threads share one connection per device.</li>
+    <li>Cancellation, per-phase timeouts, machine-readable events, connection limits with slot waiting.</li>
+    <li>Keys from files or PEM text (vault, database); Debian packages for Debian 12/13 and Ubuntu 24.04/26.04.</li>
+    <li>Functional tests on real devices, stress and regression tests under AddressSanitizer.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Freelance</h3><span class="meta">1 yr</span></div>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Developer, DDoS Prevention, Kaspersky Lab</h3><span class="meta">3 yrs</span></div>
+  <p>DDoS protection service for banks.</p>
+  <ul>
+    <li>Database performance under load; replication and non-stop backups on a Percona fork of MySQL.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Developer &amp; Operations, free forum hosting platform</h3><span class="meta">3 yrs</span></div>
+  <p>3 million hits a day on 21 colocated servers.</p>
+  <ul>
+    <li>Reduced error rates, set up load monitoring and the backup system.</li>
+    <li>Tuned packet filters and kernel network parameters to limit the impact of DDoS attacks.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Sole developer, social network for the Armenian community</h3><span class="meta">5 yrs</span></div>
+  <p>Built the whole product myself: backend, frontend, server administration.</p>
+  <ul>
+    <li>Grew to 80,000+ registered users and up to 1,200 online at once, all served by a single dedicated Xeon server (PHP, memcached, FreeBSD).</li>
+    <li>Tested the frontend in 14 browsers at a time when web standards were barely followed.</li>
+    <li>Fixed bugs directly from user reports.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><h3>Systems &amp; Security Administrator, regional ISP</h3><span class="meta">4 yrs</span></div>
+  <ul>
+    <li>Responsible for system security and all technical configuration on FreeBSD.</li>
+  </ul>
+</div>
+
+<h2>Skills</h2>
+<dl class="skills">
+  <dt>Languages</dt><dd>C++, C, Java, PHP, SQL, shell</dd>
+  <dt>Performance &amp; debugging</dt><dd>memory profiling, leak and deadlock hunting, glibc malloc tuning, Valgrind, AddressSanitizer, gdb</dd>
+  <dt>Systems</dt><dd>Linux, FreeBSD, kernel and TCP/IP tuning, packet filtering, DDoS mitigation</dd>
+  <dt>Security &amp; delivery</dt><dd>hardware-token licensing (JaCarta), GPG key hierarchy with offline master key, signed APT repositories, Debian packaging</dd>
+  <dt>Data</dt><dd>MySQL / Percona, replication, hot backups, memcached</dd>
+  <dt>Android</dt><dd>Android TV, AndroidX, ADB / AOSP internals, ANR and crash analysis</dd>
+</dl>
+
+<h2>How I work</h2>
+<div class="principles">
+  <div class="principle">
+    <h3>AI-accelerated, engineer-controlled</h3>
+    <p>I use modern AI tools as a force multiplier: they write the routine code, tests and drafts; I set the design,
+    review every line and own the result. Nothing ships that I have not read and tested. In practice this makes my
+    work 3–5 times faster with no loss of quality, so you pay for fewer hours.</p>
+  </div>
+  <div class="principle">
+    <h3>Architecture first, no technical debt</h3>
+    <p>Before writing code I make sure the design fits the problem and will not have to be patched around later.
+    Quick hacks that turn into permanent debt are exactly the kind of problem I am usually hired to clean up.</p>
+  </div>
+  <div class="principle">
+    <h3>Stability is the feature</h3>
+    <p>Explicit timeouts, bounded resources, predictable shutdown. I design for the slow network, the misbehaving
+    client and the process that runs for months without a restart.</p>
+  </div>
+  <div class="principle">
+    <h3>Every bug gets a test</h3>
+    <p>A bug is closed when a test reproduces it and passes after the fix. Stress and regression tests run under
+    AddressSanitizer, functional tests run against real devices.</p>
+  </div>
+</div>
+
+<h2>Working with me</h2>
+<div class="offer">
+  <p><strong>Available for part-time contracts, about 20 hours a week, remote. Rate from $60/hour.</strong></p>
+  <p>Good fit if you have:</p>
+  <ul>
+    <li>a C++/Linux service that leaks, bloats, deadlocks or can't keep up with load;</li>
+    <li>a networked system where one bad client affects everyone;</li>
+    <li>a fleet of Android or AOSP devices to manage at scale;</li>
+    <li>software that needs licensing tied to hardware tokens, or a signed Debian package repository.</li>
+  </ul>
+  <p>All communication is in writing, in English or Russian: chat, issues, email. You get clear written plans,
+  status updates and reports you can forward to your team, with no meetings to schedule across time zones.</p>
+  <p>Happy to start with a small paid task. Payment in USDT/USDC is welcome.</p>
+  <p><a href="https://t.me/mgkp_mgnkp">Message me on Telegram</a> or <a href="mailto:3050860@gmail.com">email</a>.</p>
+</div>
+
+</div>
 </body>
 </html>
