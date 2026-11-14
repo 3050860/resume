@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior C++ Systems Engineer | High-Load & Mission-Critical Systems</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --heading-color: #f0f6fc;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+            --code-bg: #161b22;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 { font-size: 2.2em; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 0; }
+        h2 { font-size: 1.5em; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
+        h3 { font-size: 1.2em; color: var(--accent-color); margin-top: 1.2em; }
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .contact-info {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .contact-info a { margin-right: 20px; display: inline-block; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .highlight { color: #7ee787; font-weight: bold; }
+        .section { margin-bottom: 40px; }
+        .tag {
+            display: inline-block;
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 4px 10px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            color: var(--heading-color);
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px 15px; }
+            h1 { font-size: 1.8em; }
+            .contact-info a { display: block; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Senior C++ Systems Engineer</h1>
+            <p style="font-size: 1.2em; color: var(--accent-color);">High-Load & Mission-Critical Systems Specialist</p>
+            <div class="contact-info">
+                <a href="mailto:3050860@gmail.com">✉️ 3050860@gmail.com</a>
+                <a href="https://t.me/mgkp_mgnkp" target="_blank">💬 @mgkp_mgnkp</a>
+                <a href="https://github.com/3050860" target="_blank">💻 github.com/3050860</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <p>Systems engineer with 26+ years of experience specializing in high-load, mission-critical applications operating in strict 24/7 production environments. Core expertise: identifying and eliminating performance bottlenecks, memory leaks, race conditions, and scaling issues in complex C++/Linux backends. Proven track record of stabilizing production systems, optimizing resource consumption by orders of magnitude, and building robust device fleet management architectures handling thousands of concurrent connections.</p>
+        </section>
+
+        <section class="section">
+            <h2>Core Competencies</h2>
+            <div>
+                <span class="tag">High-Load C++ Development</span>
+                <span class="tag">Multithreading & Async I/O</span>
+                <span class="tag">Memory Leak Detection (Valgrind, ASan)</span>
+                <span class="tag">AOSP / Android TV Fleet Management</span>
+                <span class="tag">Reproducible Builds & CI/CD</span>
+                <span class="tag">Secure Offline GPG Signing</span>
+                <span class="tag">PKI & Hardware Token Licensing</span>
+                <span class="tag">Linux Kernel & Network Tuning</span>
+            </div>
+        </section>
+
+        <section class="section">
+
+            <h2>Selected Career Highlights</h2>
+
+            <h3>Senior C++ Systems Engineer | Hotel TV & Fleet management (Current)</h3>
+            <p>Stabilized and optimized the core C++ backend and Android TV applications for a large-scale Hotel TV system.</p>
+            <ul>
+     <li><span class="highlight">Memory Optimization:</span> Reduced server RSS from 5,200 MB to 105 MB
+       (98% reduction) by identifying and resolving glibc malloc arena
+       fragmentation caused by Transparent Huge Pages (THP).</li>
+     <li><span class="highlight">Protocol Rewrite:</span> Rewrote a legacy communication protocol where a
+       single slow device could block the entire read queue, ensuring
+       backward compatibility with older clients..</li>
+     <li><span class="highlight">Embedded Web Server:</span> Optimized the built-in web server, reducing
+       memory consumption by 60x while increasing throughput from 3 MB/s
+       to 75 MB/s (25x improvement)..</li>
+     <li><span class="highlight">System Stability:</span> Eliminated memory leaks, resolved thread
+       deadlocks, and enforced strict timeout mechanisms across all
+       modules (SIGINT-based graceful shutdown instead of indefinite
+       network waits)..</li>
+     <li><span class="highlight">Android TV App:</span> Implemented a custom CSS parser for visual styling,
+       migrated from Android Support Library to AndroidX, added dynamic
+       language loading without package rebuilds, and resolved numerous
+       ANR and crash issues..</li>
+            </ul>
+
+            <h3>AOSP Device Fleet Management System | Personal Open-Source Initiative</h3>
+            <ul>
+                <li>Designed and implemented a high-performance standalone ADB client library extracted from AOSP sources.</li>
+                <li>Successfully manages <span class="highlight">3,500+ simultaneous TCP connections</span> without memory leaks or thread starvation.</li>
+                <li>Packaged as a lightweight <code>.so</code> library for seamless integration into custom fleet management systems.</li>
+            </ul>
+
+            <h3>DDoS Prevention & Security Systems | Kaspersky Lab</h3>
+            <ul>
+                <li>Developed enterprise-grade DDoS protection systems for financial institutions.</li>
+                <li>Optimized database performance, replication, and continuous backup strategies using Percona forks.</li>
+                <li>Implemented network filtering and kernel parameter tuning to mitigate DDoS attack impact.</li>
+            </ul>
+
+            <h3>High-Load Web Infrastructure | Free Forum Platform</h3>
+            <ul>
+                <li>Optimized codebase and infrastructure for a platform handling <span class="highlight">3 million daily hits</span> across 21 colocation servers.</li>
+                <li>Reduced error rates through systematic code optimization, load monitoring, and kernel tuning.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Notable Technical Achievements</h2>
+            <h3>Open Source Contributions</h3>
+            <ul>
+                <li><strong>Memcached Performance Issue (circa 2006):</strong> Identified significant latency in responses for specific packet sizes. Root cause: missing <code>TCP_NODELAY</code> socket option. Implemented and contributed the fix.</li>
+                <li><strong>Java Push Server Thread Leak (circa 2008):</strong> Discovered a thread leak in an open-source Java push server handling thousands of concurrent users. Root cause: missing <code>volatile</code> keyword on a thread counter. Identified manually through deep code analysis.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Work Philosophy</h2>
+            <ul>
+                <li><strong>Asynchronous & Focused:</strong> Prefer text-based communication (Jira, GitHub, email) to maintain deep focus and avoid meeting fatigue.</li>
+                <li><strong>Efficiency-Driven:</strong> Leverage modern AI orchestration to accelerate routine tasks while maintaining senior-level quality standards backed by rigorous QA.</li>
+                <li><strong>Production-First:</strong> All solutions are designed for zero-downtime, 24/7 mission-critical environments.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Availability</h2>
+            <p>Open to <strong>part-time contract work (20–30 hrs/week)</strong> or targeted architectural audits for companies struggling with:</p>
+            <ul>
+                <li>Memory leaks, race conditions, or scaling bottlenecks in C++/Linux backends.</li>
+                <li>Device fleet management at scale (especially custom AOSP/non-GMS devices).</li>
+                <li>Reproducible, secure CI/CD pipelines for Debian/Ubuntu packages.</li>
+            </ul>
+            <p style="margin-top: 20px; font-size: 1.1em;">
+                <strong>Let's talk:</strong> <a href="https://t.me/mgkp_mgnkp">Telegram</a> or <a href="mailto:3050860@gmail.com">Email</a>
+            </p>
+        </section>
+    </div>
+</body>
+</html>
